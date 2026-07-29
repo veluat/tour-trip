@@ -1,5 +1,5 @@
 ## Деплой
-Страница опубликована: [ссылка]
+Страница опубликована: [https://gentle-lokum-fbb90a.netlify.app/](https://gentle-lokum-fbb90a.netlify.app/)
 
 ---
 
@@ -7,7 +7,7 @@
 
 ```bash
 # 1. Клонировать репозиторий
-git clone <ссылка на репозиторий>
+git clone https://github.com/veluat/tour-trip.git
 
 # 2. Установить зависимости
 npm install
