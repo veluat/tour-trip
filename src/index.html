@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Julia Popova — Frontend Developer. Test ATT" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Экскурсия в Брест и Бресткую крепость</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="scss/main.scss" />
+</head>
+<body>
+<script>
+  fetch('/sprite.svg')
+    .then((response) => response.text())
+    .then((svg) => {
+      const div = document.createElement('div');
+      div.style.display = 'none';
+      div.innerHTML = svg;
+      document.body.insertBefore(div, document.body.firstChild);
+    });
+</script>
+
+<header class="header">
+  <div class="container header__inner">
+    <a href="/" class="logo" aria-label="На главную">
+      <img src="/icons/logo-icon.svg" alt="ATT" width="50" height="40" />
+    </a>
+
+    <nav class="header__nav" id="nav" aria-label="Основная навигация">
+      <ul class="header__menu">
+        <li><a class="header__link" href="#">ПРОГРАММА</a></li>
+        <li><a class="header__link" href="#schedule">РАСПИСАНИЕ</a></li>
+        <li><a class="header__link" href="#reviews">ОТЗЫВЫ</a></li>
+        <li class="dropdown dropdown--contacts">
+          <button class="dropdown__toggle" type="button" aria-haspopup="true">
+            КОНТАКТЫ
+            <svg class="dropdown__chevron" width="18" height="18">
+              <use href="/sprite.svg#icon-chevron"></use>
+            </svg>
+          </button>
+          <div class="dropdown__list" role="menu">
+            <a class="dropdown__phone" href="tel:+375297566665">
+              <svg class="dropdown__phone-icon" width="18" height="18">
+                <use href="/sprite.svg#icon-phone"></use>
+              </svg>
+              +375 29 756-66-65
+            </a>
+            <div class="dropdown__socials">
+              <a href="#" class="social social--dark" aria-label="Telegram">
+                <svg>
+                  <use href="/sprite.svg#icon-telegram" />
+                </svg>
+              </a>
+              <a href="#" class="social social--dark" aria-label="WhatsApp">
+                <svg>
+                  <use href="/sprite.svg#icon-whatsapp" />
+                </svg>
+              </a>
+              <a href="#" class="social social--dark" aria-label="Viber">
+                <svg>
+                  <use href="/sprite.svg#icon-viber" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="header__tools">
+      <div class="dropdown dropdown--currency">
+        <button class="dropdown__toggle" type="button" aria-haspopup="true">
+          BYN
+          <svg class="dropdown__chevron" width="18" height="18">
+            <use href="/sprite.svg#icon-chevron"></use>
+          </svg>
+        </button>
+        <ul class="dropdown__list" role="menu">
+          <li>
+            <button class="dropdown__item dropdown__item--active" type="button" role="menuitem">
+              BYN
+            </button>
+          </li>
+          <li>
+            <button class="dropdown__item" type="button" role="menuitem">RUB</button>
+          </li>
+          <li>
+            <button class="dropdown__item" type="button" role="menuitem">EUR</button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="dropdown dropdown--lang">
+        <button class="dropdown__toggle" type="button" aria-haspopup="true">
+          РУС
+          <svg class="dropdown__chevron" width="18" height="18">
+            <use href="/sprite.svg#icon-chevron"></use>
+          </svg>
+        </button>
+        <ul class="dropdown__list" role="menu">
+          <li>
+            <button class="dropdown__item dropdown__item--active" type="button" role="menuitem">
+              РУС
+            </button>
+          </li>
+          <li>
+            <button class="dropdown__item" type="button" role="menuitem">БЕЛ</button>
+          </li>
+          <li>
+            <button class="dropdown__item" type="button" role="menuitem">ENG</button>
+          </li>
+        </ul>
+      </div>
+
+      <a class="button button--outline button--outline-header" href="#">БРОНИРОВАТЬ</a>
+
+      <button class="header__burger" type="button" aria-label="Меню" aria-expanded="false">
+        <span class="header__burger-line"></span>
+        <span class="header__burger-line"></span>
+        <span class="header__burger-line"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <div class="hero__content">
+        <h1 class="hero__title">Экскурсия Тысячелетний Брест и Брестская крепость </h1>
+        <p class="hero__subtitle">Погрузитесь в историю наследия заповедной памяти</p>
+
+        <div class="hero__actions">
+          <a href="#schedule" class="button button--primary">РАСПИСАНИЕ</a>
+          <a href="#schedule" class="hero__scroll" aria-label="Прокрутить к расписанию">
+            <div class="animation">
+              <svg class="animation__item animation__item--1" width="24" height="24">
+                <use href="/sprite.svg#icon-chevron-animation"></use>
+              </svg>
+              <svg class="animation__item animation__item--2" width="24" height="24">
+                <use href="/sprite.svg#icon-chevron-animation"></use>
+              </svg>
+              <svg class="animation__item animation__item--3" width="24" height="24">
+                <use href="/sprite.svg#icon-chevron-animation"></use>
+              </svg>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="schedule" id="schedule">
+    <div class="container schedule__inner">
+      <h2 class="schedule__title">
+        Расписание экскурсии<br />Тысячелетний Брест и Брестская крепость
+      </h2>
+
+      <form class="schedule__form" id="scheduleForm" novalidate>
+        <div class="schedule__field">
+          <label class="schedule__label" for="dateFrom">Дата с</label>
+          <div class="schedule__input-wrapper">
+            <input
+              class="schedule__input"
+              type="text"
+              id="dateFrom"
+              placeholder="Дд.Мм.Гггг"
+              readonly
+            />
+            <img
+              class="schedule__icon"
+              src="/icons/calendar.svg"
+              alt="Календарь"
+              width="23"
+              height="23"
+              aria-hidden="true"
+            />
+          </div>
+        </div>
+
+        <div class="schedule__field">
+          <label class="schedule__label" for="dateTo">Дата по</label>
+          <div class="schedule__input-wrapper">
+            <input
+              class="schedule__input"
+              type="text"
+              id="dateTo"
+              placeholder="Дд.Мм.Гггг"
+              readonly
+            />
+            <img
+              class="schedule__icon"
+              src="/icons/calendar.svg"
+              alt="Календарь"
+              width="23"
+              height="23"
+            />
+          </div>
+        </div>
+
+        <div class="schedule__field schedule__field--small">
+          <label class="schedule__label" for="adults">Кол-во взрослых</label>
+          <div class="schedule__input-wrapper">
+            <select class="schedule__input schedule__select" id="adults">
+              <option value="0">0</option>
+              <option value="1" selected>1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+            <svg class="schedule__icon">
+              <use href="/sprite.svg#icon-chevron"></use>
+            </svg>
+          </div>
+        </div>
+
+        <div class="schedule__field schedule__field--small">
+          <label class="schedule__label" for="children">Кол-во детей</label>
+          <div class="schedule__input-wrapper">
+            <select class="schedule__input schedule__select" id="children">
+              <option value="0" selected>0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+            <svg class="schedule__icon">
+              <use href="/sprite.svg#icon-chevron"></use>
+            </svg>
+          </div>
+        </div>
+
+        <button class="button button--secondary schedule__submit" type="submit">Поиск</button>
+      </form>
+
+      <div class="schedule__grid">
+        <div class="schedule-card schedule-card--no-places" data-date="2026-06-18">
+          <div class="schedule-card__main">
+            <div class="schedule-card__date">18.06.2026 (чт.)</div>
+            <div class="schedule-card__time">Начало: 18:00 ~ 4 ч. 15 мин.</div>
+            <div class="schedule-card__status schedule-card__status--no-places">Нет мест</div>
+          </div>
+          <div class="schedule-card__price-box">
+            <div class="schedule-card__price">60.00 BYN / <br class="price-br" />55.00 BYN</div>
+          </div>
+        </div>
+
+        <div class="schedule-card" data-date="2026-06-25">
+          <div class="schedule-card__main">
+            <div class="schedule-card__date">25.06.2026 (чт.)</div>
+            <div class="schedule-card__time">Начало: 18:00 ~ 4 ч. 15 мин.</div>
+            <div class="schedule-card__status">Осталось мест: 2</div>
+          </div>
+          <div class="schedule-card__price-box">
+            <div class="schedule-card__price">60.00 BYN / <br class="price-br" />55.00 BYN</div>
+            <button class="button button--primary schedule-card__button">Бронировать</button>
+          </div>
+        </div>
+
+        <div class="schedule-card" data-date="2026-06-25">
+          <div class="schedule-card__main">
+            <div class="schedule-card__date">25.06.2026 (чт.)</div>
+            <div class="schedule-card__time">Начало: 18:00 ~ 4 ч. 15 мин.</div>
+            <div class="schedule-card__status">Осталось мест: 2</div>
+          </div>
+          <div class="schedule-card__price-box">
+            <div class="schedule-card__price">60.00 BYN / <br class="price-br" />55.00 BYN</div>
+            <button class="button button--primary schedule-card__button">Бронировать</button>
+          </div>
+        </div>
+
+        <div class="schedule-card" data-date="2026-06-25">
+          <div class="schedule-card__main">
+            <div class="schedule-card__date">25.06.2026 (чт.)</div>
+            <div class="schedule-card__time">Начало: 18:00 ~ 4 ч. 15 мин.</div>
+            <div class="schedule-card__status">Осталось мест: 2</div>
+          </div>
+          <div class="schedule-card__price-box">
+            <div class="schedule-card__price">60.00 BYN / <br class="price-br" />55.00 BYN</div>
+            <button class="button button--primary schedule-card__button">Бронировать</button>
+          </div>
+        </div>
+
+        <div class="schedule-card" data-date="2026-06-25">
+          <div class="schedule-card__main">
+            <div class="schedule-card__date">25.06.2026 (чт.)</div>
+            <div class="schedule-card__time">Начало: 18:00 ~ 4 ч. 15 мин.</div>
+            <div class="schedule-card__status">Осталось мест: 2</div>
+          </div>
+          <div class="schedule-card__price-box">
+            <div class="schedule-card__price">60.00 BYN / <br class="price-br" />55.00 BYN</div>
+            <button class="button button--primary schedule-card__button">Бронировать</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews" id="reviews">
+    <div class="container">
+      <h2 class="reviews__title">Отзывы наших клиентов</h2>
+
+      <div class="reviews__slider">
+        <div class="reviews__track" id="reviews-track">
+          <div class="reviews__slide">
+            <div class="review-card">
+              <div class="review-card__header">
+                <img src="/images/avatar.png" alt="Марина" class="review-card__avatar" />
+                <div class="review-card__info">
+                  <div class="review-card__top">
+                    <div class="review-card__name">
+                      Марина, <span class="review-card__city">Санкт-Петербург</span>
+                    </div>
+                    <span class="review-card__date">11-Июня-2026</span>
+                  </div>
+                  <div class="review-card__stars">
+                    <svg class="review-card__stars--active">
+                      <use href="/sprite.svg#icon-star"></use>
+                    </svg>
+                    <svg class="review-card__stars--active">
+                      <use href="/sprite.svg#icon-star"></use>
+                    </svg>
+                    <svg class="review-card__stars--active">
+                      <use href="/sprite.svg#icon-star"></use>
+                    </svg>
+                    <svg class="review-card__stars--active">
+                      <use href="/sprite.svg#icon-star"></use>
+                    </svg>
+                    <svg>
+                      <use href="/sprite.svg#icon-star"></use>
+                    </svg>
+                  </div>
+
+                  <div class="review-card__text-wrapper" id="text-1">
+                    <p class="review-card__text">
+                      Поездка очень понравилась! Усадьба Огинского, которого знают все, но о нем
+                      знают меньше. Быт белорусской усадьбы атмосфере. Три очень интересных
+                      костела, православный храм. Гид Юрий рассказывал интересно, видна любовь к
+                      родному краю, что всегда вдохновляет. Три очень интересных костела,
+                      православный храм. Гид Юрий рассказывал интересно, видна любовь к родному
+                      краю, что всегда вдохновляет. Три очень интересных костела, православный
+                      храм. Гид Юрий рассказывал интересно, видна любовь к родному краю, что
+                      всегда вдохновляет. Три очень интересных костела, православный храм. Гид
+                      Юрий рассказывал интересно, видна любовь к родному краю, что всегда
+                      вдохновляет.
+                    </p>
+                  </div>
+                  <button class="review-card__more" data-target="text-1" aria-expanded="false" aria-controls="text-1">
+                    далее...
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="reviews__slide">
+            <div class="review-card">
+              <div class="review-card__header">
+                <img src="/images/avatar.png" alt="Анна" class="review-card__avatar" />
+                <div class="review-card__info">
+                  <div class="review-card__top">
+                    <div class="review-card__name">
+                      Марина, <span class="review-card__city">Санкт-Петербург</span>
+                    </div>
+                    <span class="review-card__date">11-Июня-2026</span>
+                  </div>
+                  <div class="review-card__stars">
+                    <svg class="review-card__stars--active">
+                      <use href="/sprite.svg#icon-star"></use>
+                    </svg>
+                    <svg class="review-card__stars--active">
+                      <use href="/sprite.svg#icon-star"></use>
+                    </svg>
+                    <svg class="review-card__stars--active">
+                      <use href="/sprite.svg#icon-star"></use>
+                    </svg>
+                    <svg class="review-card__stars--active">
+                      <use href="/sprite.svg#icon-star"></use>
+                    </svg>
+                    <svg>
+                      <use href="/sprite.svg#icon-star"></use>
+                    </svg>
+                  </div>
+
+                  <p class="review-card__text">
+                    Поездка очень понравилась! Усадьба Огинского, которого знают все, но о нем
+                    знают меньше. Быт белорусской усадьбы атмосфере. Три очень интересных
+                    костела, православный храм.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="reviews__slide">
+            <div class="review-card">
+              <div class="review-card__header">
+                <img src="/images/avatar.png" alt="Сергей" class="review-card__avatar" />
+                <div class="review-card__info">
+                  <div class="review-card__top">
+                    <div class="review-card__name">
+                      Анна, <span class="review-card__city">Гомель</span>
+                    </div>
+                    <span class="review-card__date">28-Июля-2026</span>
+                  </div>
+                  <div class="review-card__stars">
+                    <svg class="review-card__stars--active">
+                      <use href="/sprite.svg#icon-star"></use>
+                    </svg>
+                    <svg class="review-card__stars--active">
+                      <use href="/sprite.svg#icon-star"></use>
+                    </svg>
+                    <svg class="review-card__stars--active">
+                      <use href="/sprite.svg#icon-star"></use>
+                    </svg>
+                    <svg class="review-card__stars--active">
+                      <use href="/sprite.svg#icon-star"></use>
+                    </svg>
+                    <svg class="review-card__stars--active">
+                      <use href="/sprite.svg#icon-star"></use>
+                    </svg>
+                  </div>
+                  <p class="review-card__text">
+                    Лучшая поездка в моей жизни. Всем советую съездить.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reviews__controls">
+        <button
+          class="button button--slider button--slider--prev"
+          id="review-prev"
+          aria-label="Предыдущий отзыв"
+        >
+          <svg width="22" height="22" viewBox="0 0 18 18">
+            <use href="/sprite.svg#icon-chevron" />
+          </svg>
+        </button>
+        <button
+          class="button button--slider button--slider--next"
+          id="review-next"
+          aria-label="Следующий отзыв"
+        >
+          <svg width="22" height="22" viewBox="0 0 18 18">
+            <use href="/sprite.svg#icon-chevron" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <a href="/" class="logo" aria-label="На главную">
+      <img src="/icons/logo-full.svg" alt="ATT" width="180" height="40" />
+    </a>
+
+    <div class="footer__container">
+      <div class="footer__left">
+        <p class="footer__contacts-title">КОНТАКТЫ</p>
+        <a href="tel:+375173944913" class="footer__phone">
+          <svg class="footer__icon" width="18" height="18">
+            <use href="/sprite.svg#icon-phone"></use>
+          </svg>
+          +375 17 394-49-13
+        </a>
+        <a href="tel:+375297566665" class="footer__phone">
+          <svg class="footer__icon" width="18" height="18">
+            <use href="/sprite.svg#icon-phone"></use>
+          </svg>
+          +375 29 756-66-65
+        </a>
+        <div class="footer__social">
+          <a href="#" class="social social--light" aria-label="Telegram">
+            <svg>
+              <use href="/sprite.svg#icon-telegram" />
+            </svg>
+          </a>
+          <a href="#" class="social social--light" aria-label="WhatsApp">
+            <svg>
+              <use href="/sprite.svg#icon-whatsapp" />
+            </svg>
+          </a>
+          <a href="#" class="social social--light" aria-label="Viber">
+            <svg>
+              <use href="/sprite.svg#icon-viber" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer__right">
+        <a href="#" class="footer__copy footer__copy--link">
+          &copy; Частное научно-производственное унитарное предприятие "Автоматизированные
+          технологии туризма"
+        </a>
+        <p class="footer__text">
+          Свидетельство о регистрации №1808 от 9.08.2007 выдано Минским горисполкомом. УНП:
+          190855081 Сертификат соответствия туристических услуг СТБ № BY/112 04.03. 071.01 00099
+          выдан Национальным агентством по туризму РБ, действителен до 22.10.2029 г.
+        </p>
+      </div>
+    </div>
+
+    <hr class="footer__line" />
+
+    <div class="footer__bottom">
+      <p class="footer__copy">
+        &copy; 2007-2026 Частное научно-производственное унитарное предприятие
+        "Автоматизированные технологии туризма"
+      </p>
+    </div>
+  </div>
+</footer>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

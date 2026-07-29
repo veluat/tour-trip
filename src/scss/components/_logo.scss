@@ -1,0 +1,14 @@
+.logo {
+  display: inline-block;
+  flex-shrink: 0;
+  line-height: 0;
+
+  img {
+    width: auto;
+    height: 40px;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}

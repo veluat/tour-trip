@@ -1,0 +1,62 @@
+:root {
+  --color-primary: #f2b124;
+  --color-secondary: #4d799d;
+  --color-text: #233849;
+  --color-text-secondary: #727272;
+  --color-text-placeholder: #b9b9b9;
+  --color-border: #d9d9d9;
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  // Тени
+  --shadow-popup: 0px 2px 6px 0px rgba(0, 0, 0, 0.25);
+  --shadow-card: 0px 0px 5px 0px rgba(0, 0, 0, 0.15);
+  --shadow-schedule-form: 0px 6px 20px 0px rgba(0, 0, 0, 0.1);
+
+  // Скругления
+  --radius-default: 3px;
+  --radius-schedule-form: 5px;
+
+  // Отступы контейнера
+  --container-padding: 16px;
+
+  @media (min-width: 768px) {
+    --container-padding: 24px;
+  }
+
+  @media (min-width: 1024px) {
+    --container-padding: 60px;
+  }
+
+  @media (min-width: 1440px) {
+    --container-padding: 80px;
+  }
+
+  // Система отступов
+  --space-xs: 10px;
+  --space-s: 16px;
+  --space-m: 20px;
+  --space-lg: 24px;
+  --space-xl: 30px;
+  --space-xxl: 50px;
+  --space-mobile: 60px;
+  --space-desktop: 80px;
+
+  // Шрифты
+  --font-base: 'Poppins', sans-serif;
+
+  --text-xs: 14px;
+  --text-sm: 16px;
+  --text-base: 18px;
+  --text-lg: 27px;
+  --text-xl: 30px;
+  --text-xxl: 36px;
+  --text-2xl: 56px;
+
+  --font-regular: 400;
+  --font-semi: 600;
+  --font-bold: 700;
+
+  // Максимальная ширина контейнера
+  --screen-max: 1440px;
+}

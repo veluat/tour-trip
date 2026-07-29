@@ -1,0 +1,29 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: var(--font-base), sans-serif;
+  font-size: var(--text-xs);
+  font-weight: var(--font-regular);
+  background: var(--color-white);
+  color: var(--color-text);
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  max-width: var(--screen-max);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}

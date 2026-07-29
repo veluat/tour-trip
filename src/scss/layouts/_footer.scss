@@ -1,0 +1,127 @@
+@use '../abstracts/mixins' as *;
+
+.footer {
+  background: var(--color-secondary);
+  padding: var(--space-xl) 0;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
+  }
+
+  .logo {
+    display: block;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+
+    @include desktop {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 40px;
+    }
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+
+    @include desktop {
+      flex: 1;
+    }
+  }
+
+  &__contacts-title {
+    color: var(--color-white);
+    font-size: var(--text-sm);
+    font-weight: var(--font-semi);
+    margin: 0;
+  }
+
+  &__phone {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--color-white);
+    text-decoration: none;
+    transition: 0.2s ease;
+
+    &:hover {
+      text-decoration: underline;
+      text-underline-offset: 1px;
+    }
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    color: var(--color-white);
+  }
+
+  &__social {
+    display: flex;
+    gap: var(--space-xs);
+    margin-top: var(--space-xs);
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+
+    @include desktop {
+      flex: 1;
+    }
+  }
+
+  &__copy {
+    color: var(--color-white);
+    font-weight: 700;
+    margin: 0;
+
+    &--link {
+      &:hover {
+        text-decoration: underline;
+        text-underline-offset: 1px;
+      }
+    }
+  }
+
+  &__text {
+    color: var(--color-white);
+    margin: 0;
+  }
+
+  &__line {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: flex-start;
+
+    .footer__copy {
+      font-weight: 400;
+    }
+  }
+
+  @include tablet {
+    &__container {
+      flex-direction: column;
+      gap: var(--space-m);
+    }
+
+    &__left {
+      gap: var(--space-xs);
+    }
+
+    &__right {
+      gap: var(--space-xs);
+    }
+  }
+}

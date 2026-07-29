@@ -1,0 +1,32 @@
+.social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+  text-decoration: none;
+  will-change: transform;
+
+  svg {
+    width: 15px;
+    height: 15px;
+    fill: currentColor;
+  }
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+}
+
+.social--dark {
+  background: var(--color-secondary);
+  color: var(--color-white);
+}
+
+.social--light {
+  background: var(--color-white);
+  color: var(--color-secondary);
+  border: 1px solid var(--color-secondary);
+}
