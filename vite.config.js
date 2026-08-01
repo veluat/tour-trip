@@ -25,7 +25,6 @@ export default defineConfig({
       '@public': path.resolve(__dirname, './public'),
       '@js': path.resolve(__dirname, './src/js'),
       '@modules': path.resolve(__dirname, './src/js/modules'),
-      '@helpers': path.resolve(__dirname, './src/js/helpers'),
       '@scss': path.resolve(__dirname, './src/scss'),
     },
     extensions: ['.js', '.scss', '.svg']
