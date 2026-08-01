@@ -11,6 +11,7 @@ export function initSchedule() {
       dateFormat: 'd.m.Y',
       locale: 'ru',
       allowInput: false,
+      disableMobile: true,
       onChange: function(selectedDates) {
       },
     });
@@ -21,6 +22,7 @@ export function initSchedule() {
       dateFormat: 'd.m.Y',
       locale: 'ru',
       allowInput: false,
+      disableMobile: true,
     });
   }
 
