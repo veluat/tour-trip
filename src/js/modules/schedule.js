@@ -12,6 +12,7 @@ export function initSchedule() {
       locale: 'ru',
       allowInput: false,
       disableMobile: true,
+      minDate: 'today',
       onChange: function(selectedDates) {
       },
     });
@@ -23,6 +24,7 @@ export function initSchedule() {
       locale: 'ru',
       allowInput: false,
       disableMobile: true,
+      minDate: 'today',
     });
   }
 
